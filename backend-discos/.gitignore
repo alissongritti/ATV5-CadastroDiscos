@@ -1,0 +1,8 @@
+# Ignora a pasta de módulos do Node
+/node_modules
+
+# Ignora a pasta de build do TypeScript
+/dist
+
+# Ignora arquivos de ambiente (se você tiver)
+.env
