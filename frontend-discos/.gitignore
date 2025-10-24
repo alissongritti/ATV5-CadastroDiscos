@@ -1,0 +1,7 @@
+# Ignora a pasta de módulos do Node
+/node_modules
+
+# Ignora logs do Vite
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

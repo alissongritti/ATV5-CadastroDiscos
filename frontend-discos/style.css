@@ -1,0 +1,226 @@
+/* --- Tema Spotify Moderno --- */
+
+/* Variáveis de Cor (Inspirado no Spotify) */
+:root {
+    --spotify-green: #1DB954;
+    --spotify-black: #121212;
+    --spotify-gray-light: #b3b3b3;
+    --spotify-gray-medium: #282828;
+    --spotify-gray-dark: #181818;
+    --spotify-white: #FFFFFF;
+    --spotify-red: #E91429;
+}
+
+/* Reset Básico e Fonte */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    background-color: var(--spotify-black);
+    color: var(--spotify-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1, h2 {
+    color: var(--spotify-white);
+    font-weight: 700;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    border-bottom: 1px solid var(--spotify-gray-medium);
+    padding-bottom: 10px;
+    margin-top: 40px;
+}
+
+/* Container Principal */
+.container {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Formulário */
+form {
+    background-color: var(--spotify-gray-dark);
+    border: none;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+form div {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    width: auto;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--spotify-gray-light);
+}
+
+/* Inputs e Selects */
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%; /* Ocupa a largura total */
+    padding: 12px;
+    background-color: var(--spotify-gray-medium);
+    border: 1px solid #404040;
+    border-radius: 4px;
+    color: var(--spotify-white);
+    font-size: 1rem;
+    box-sizing: border-box; /* Garante que o padding não estoure a largura */
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--spotify-green);
+    box-shadow: 0 0 0 2px var(--spotify-green);
+}
+
+/* Botões do Formulário */
+button {
+    padding: 12px 25px;
+    cursor: pointer;
+    border: none;
+    border-radius: 500px; /* Estilo "pílula" do Spotify */
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: transform 0.1s ease, background-color 0.2s;
+    margin-top: 10px;
+}
+
+button[type="submit"] {
+    background-color: var(--spotify-green);
+    color: var(--spotify-black);
+}
+
+button[type="submit"]:hover {
+    background-color: #1ed760;
+    transform: scale(1.03);
+}
+
+button[type="button"] {
+    background-color: transparent;
+    color: var(--spotify-white);
+    border: 1px solid var(--spotify-gray-light);
+    margin-left: 10px;
+}
+
+button[type="button"]:hover {
+    background-color: var(--spotify-gray-medium);
+    border-color: var(--spotify-white);
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+th, td {
+    border: none;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--spotify-gray-medium);
+}
+
+/* Cabeçalho da Tabela */
+th {
+    background-color: transparent;
+    color: var(--spotify-gray-light);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Linhas da Tabela */
+td {
+    color: var(--spotify-white);
+}
+
+tbody tr {
+    background-color: var(--spotify-gray-dark);
+    transition: background-color 0.2s;
+}
+
+tbody tr:hover {
+    background-color: var(--spotify-gray-medium);
+}
+
+/* Botões de Ação da Tabela */
+.btn-editar,
+.btn-excluir {
+    cursor: pointer;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.btn-editar {
+    color: var(--spotify-gray-light);
+}
+
+.btn-editar:hover {
+    color: var(--spotify-green);
+}
+
+.btn-excluir {
+    color: var(--spotify-gray-light);
+    margin-left: 15px;
+}
+
+.btn-excluir:hover {
+    color: #ff4d4d; /* Um vermelho para a ação de excluir */
+}
+
+
+/* --- Notificação (Substitui o alert()) --- */
+#notification {
+    position: fixed; /* Fica fixo na tela */
+    bottom: -100px; /* Começa escondido abaixo da tela */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    border-radius: 500px;
+    font-weight: 600;
+    color: var(--spotify-black);
+    transition: bottom 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+/* Estilo de sucesso */
+#notification.success {
+    background-color: var(--spotify-green);
+}
+
+/* Estilo de erro */
+#notification.error {
+    background-color: var(--spotify-red);
+    color: var(--spotify-white);
+}
+
+/* Classe 'show' que o JavaScript vai adicionar */
+#notification.show {
+    bottom: 30px; /* Sobe para uma posição visível */
+}
